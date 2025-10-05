@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>Body Mass Index</title>
+<h1 style="color:yellow;">SHAMSHEER BANU M (25015048)</h1>
+<style type="text/css">
+body
+{
+  background-color:green;
+}
+.edge{
+width:1440px;
+margin-left:auto;
+margin-right:auto;
+padding-top:250px;
+padding-left:300px;    
+}
+.box{
+display:block;
+border:Thick dashed lime;
+width:500px;
+min-height:300px;
+font-size:20px;
+background-color:blue;    
+}
+.formelt{
+    color:orango;
+    text-align: center;
+    margin-top: 7px;
+    margin-bottom: 6px;
+}
+h1
+{
+color:rgb(255,0,179);
+text-align:center;
+padding-top: 20px;
+}
+</style>
+</head>
+<body>
+  <div class="edge">
+  <div class="box">
+  <h1>Body Mass Index</h1>
+  <form method="POST">
+    {% csrf_token %}
+  <div class="formelt">
+    Weight: <input type="text" name="weight" value="{{w}}"></input>(in kg)<br/>
+  </div>
+  <div class="formelt">
+    Height: <input type="text" name="height" value="{{h}}"></input>(in m)<br/>
+  </div>
+  <div class="formelt">
+    <input type="submit" value="Calculate"></input><br/>
+  </div>
+  <div class="formelt">
+    BMI:<input type="text" name="bmi" value="{{bmi}}"></input>kg/m<sup>2</sup><br/>
+  </div>
+  </form> 
+  </div>
+  </div>
+</body>
+</html> 
