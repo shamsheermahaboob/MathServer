@@ -36,67 +36,32 @@ Publish the website in the given URL.
 ```
 math.html
 
-<html>
+ <!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Body Mass Index</title>
-<style type="text/css">
-body
-<h1 style="color:yellow;">SHAMSHEER BANU M (25015048)</h1>
-{
-  background-color:green;
-}
-.edge{
-width:1440px;
-margin-left:auto;
-margin-right:auto;
-padding-top:250px;
-padding-left:300px;    
-}
-.box{
-display:block;
-border:Thick dashed lime;
-width:500px;
-min-height:300px;
-font-size:20px;
-background-color:blue;    
-}
-.formelt{
-    color:orango;
-    text-align: center;
-    margin-top: 7px;
-    margin-bottom: 6px;
-}
-h1
-{
-color:rgb(255,0,179);
-text-align:center;
-padding-top: 20px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="edge">
-  <div class="box">
-  <h1>Body Mass Index</h1>
-  <form method="POST">
-    {% csrf_token %}
-  <div class="formelt">
-    Weight: <input type="text" name="weight" value="{{w}}"></input>(in kg)<br/>
-  </div>
-  <div class="formelt">
-    Height: <input type="text" name="height" value="{{h}}"></input>(in m)<br/>
-  </div>
-  <div class="formelt">
-    <input type="submit" value="Calculate"></input><br/>
-  </div>
-  <div class="formelt">
-    BMI:<input type="text" name="bmi" value="{{bmi}}"></input>kg/m<sup>2</sup><br/>
-  </div>
-  </form> 
-  </div>
-  </div>
+    <div class="container">
+        <h1>BMI Calculator</h1>
+        <form id="bmiForm">
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" placeholder="Enter weight" required>
+
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" placeholder="Enter height" required>
+
+            <button type="button" onclick="calculateBMI()">Calculate BMI</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
-</html> 
+</html>
 
 views.py
 
@@ -134,17 +99,8 @@ urlpatterns = [
 ]
 
 ```
+## OUTPUT :
+![alt text](<Screenshot (22)-1.png>)
 
-
-## SERVER SIDE PROCESSING:
-![alt text](<Screenshot (22).png>)
-
-
-
-## HOMEPAGE:
-![alt text](<Screenshot (23).png>)
-
-
-
-## RESULT:
-The program for performing server side processing is completed successfully.
+## HOME PAGE :
+![alt text](<Screenshot (23)-1.png>)
